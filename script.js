@@ -61,3 +61,13 @@ document.querySelectorAll('.timeline-item .content').forEach(item => {
         }
     });
 });
+
+// Projects dropdown functionality
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const dropdown = card.querySelector('.dropdown-content');
+        if (dropdown) {
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    });
+});
