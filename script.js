@@ -52,6 +52,34 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+// Theme switch functionality
+const themeToggle = document.getElementById('checkbox');
+const body = document.body;
+
+// Check for saved theme preference
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+    body.classList.add(currentTheme);
+    if (currentTheme === 'light-mode') {
+        themeToggle.checked = true;
+    }
+} else {
+    // Default to dark mode if no preference is saved
+    body.classList.add('dark-mode');
+}
+
+themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        localStorage.setItem('theme', 'light-mode');
+    } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark-mode');
+    }
+});
+
 // Function to close all dropdowns
 function closeAllDropdowns() {
     document.querySelectorAll('.dropdown-content').forEach(dropdown => {
