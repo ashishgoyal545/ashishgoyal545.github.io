@@ -116,3 +116,18 @@ document.querySelectorAll('.project-card').forEach(card => {
         }
     });
 });
+
+// Publications dropdown functionality
+document.querySelectorAll('.publication-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const dropdown = card.querySelector('.dropdown-content');
+        if (dropdown) {
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                closeAllDropdowns(); // Close all other dropdowns
+                dropdown.style.display = 'block';
+            }
+        }
+    });
+});

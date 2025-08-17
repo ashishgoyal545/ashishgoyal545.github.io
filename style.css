@@ -423,6 +423,24 @@ h2 {
     transform: translateY(-5px);
 }
 
+.publications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.publication-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 30px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.publication-card:hover {
+    transform: translateY(-5px);
+}
+
 .education-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
