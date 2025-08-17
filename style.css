@@ -1,0 +1,128 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: #f9fafb;
+  color: #222;
+}
+header {
+  background: #25385f;
+  color: #fff;
+  padding: 1.5rem 0 1rem 0;
+  text-align: center;
+  border-bottom: 3px solid #2d437a;
+}
+.contact h1 {
+  margin: 0;
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+.contact p {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.1rem;
+}
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+header nav ul li a {
+  color: #e3eaff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  font-size: 1rem;
+}
+header nav ul li a:hover,
+header nav ul li a:focus {
+  color: #ffcf5c;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(70, 90, 130, 0.07);
+  margin-bottom: 2rem;
+  padding: 2rem 1.5rem;
+  transition: box-shadow 0.2s;
+}
+.card:hover {
+  box-shadow: 0 8px 36px rgba(70, 90, 130, 0.16);
+}
+
+h2 {
+  color: #25385f;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.4rem;
+}
+h3 {
+  color: #345b9e;
+  margin: 1.2rem 0 0.5rem 0;
+  font-size: 1.15rem;
+}
+.timeline > div {
+  margin-bottom: 1.2rem;
+}
+.timeline ul,
+.project-list ul {
+  margin: 0.3rem 0 0.8rem 1.1rem;
+  padding: 0;
+}
+.timeline ul li,
+.project-list ul li,
+.skills-list div {
+  margin-bottom: 0.3rem;
+}
+.project-list > div {
+  margin-bottom: 1.4rem;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem 2rem;
+  margin-top: 0.7rem;
+}
+.skills-list div {
+  background: #e8f0fe;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+footer {
+  background: #25385f;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 700px) {
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+  main {
+    padding: 0 0.4rem;
+  }
+  .card {
+    padding: 1.2rem 0.7rem;
+  }
+  header nav ul {
+    gap: 0.7rem;
+    font-size: 0.91rem;
+  }
+}
