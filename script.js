@@ -52,12 +52,24 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+// Function to close all dropdowns
+function closeAllDropdowns() {
+    document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+        dropdown.style.display = 'none';
+    });
+}
+
 // Experience dropdown functionality
 document.querySelectorAll('.timeline-item .content').forEach(item => {
     item.addEventListener('click', () => {
         const dropdown = item.querySelector('.dropdown-content');
         if (dropdown) {
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                closeAllDropdowns(); // Close all other dropdowns
+                dropdown.style.display = 'block';
+            }
         }
     });
 });
@@ -67,7 +79,12 @@ document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', () => {
         const dropdown = card.querySelector('.dropdown-content');
         if (dropdown) {
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                closeAllDropdowns(); // Close all other dropdowns
+                dropdown.style.display = 'block';
+            }
         }
     });
 });
