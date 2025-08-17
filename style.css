@@ -145,6 +145,15 @@ body {
     gap: 15px;
 }
 
+.hero-image img {
+    border-radius: 50%;
+    width: 300px; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.5);
+}
+
 @media (min-width: 768px) {
     .hero-buttons {
         flex-direction: row;
