@@ -2,10 +2,10 @@
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        navbar.style.backgroundColor = 'rgba(26, 26, 26, 0.95)';
+        navbar.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--navbar-scrolled-bg-color');
         navbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
     } else {
-        navbar.style.backgroundColor = 'rgba(26, 26, 26, 0.8)';
+        navbar.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--navbar-bg-color');
         navbar.style.boxShadow = 'none';
     }
 });

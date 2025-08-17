@@ -37,7 +37,7 @@ body {
     max-width: 1200px;
     top: 0;
     z-index: 1000;
-    background-color: rgba(26, 26, 26, 0.8);
+    background-color: var(--navbar-bg-color, rgba(26, 26, 26, 0.8)); /* Use a variable for background */
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
@@ -129,6 +129,8 @@ body.dark-mode {
     --background-color: #1a1a1a;
     --text-color: #e0e0e0;
     --card-bg: #2c2c2c;
+    --navbar-bg-color: rgba(26, 26, 26, 0.8);
+    --navbar-scrolled-bg-color: rgba(26, 26, 26, 0.95);
 }
 
 /* Light mode variables */
@@ -138,12 +140,14 @@ body.light-mode {
     --background-color: #f0f4f8;
     --text-color: #333;
     --card-bg: #ffffff;
+    --navbar-bg-color: rgba(240, 244, 248, 0.8);
+    --navbar-scrolled-bg-color: rgba(255, 255, 255, 0.9);
 }
 
 .nav-logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-color); /* Use text-color variable */
 }
 
 .nav-links {
@@ -209,7 +213,7 @@ body.light-mode {
 .hero-text h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    color: #fff;
+    color: var(--text-color);
 }
 
 @media (min-width: 768px) {
@@ -282,7 +286,7 @@ h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 50px;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .timeline {
