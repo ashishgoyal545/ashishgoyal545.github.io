@@ -131,3 +131,21 @@ document.querySelectorAll('.publication-card').forEach(card => {
         }
     });
 });
+
+// Add nav link active class on scroll
+window.addEventListener('scroll', () => {
+    let currentSection = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= sectionTop - 60) { // -60 for navbar height
+            currentSection = section.getAttribute('id');
+        }
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === currentSection) {
+            link.classList.add('active');
+        }
+    });
+});
