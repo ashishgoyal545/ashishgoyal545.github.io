@@ -1,33 +1,63 @@
-// Smooth scroll for navigation
-document.querySelectorAll('header nav ul li a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const targetId = link.getAttribute('href').replace('#', '');
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      e.preventDefault();
-      window.scrollTo({
-        top: targetSection.offsetTop - 20,
-        behavior: 'smooth'
-      });
+// Navbar scroll effect
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.style.backgroundColor = 'rgba(26, 26, 26, 0.95)';
+        navbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+    } else {
+        navbar.style.backgroundColor = 'rgba(26, 26, 26, 0.8)';
+        navbar.style.boxShadow = 'none';
     }
-  });
 });
 
-// Highlight nav on scroll
-window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('main section');
-  let scrollPosition = window.scrollY + 90;
-  let currentId = '';
-  sections.forEach(section => {
-    if (section.offsetTop <= scrollPosition) {
-      currentId = section.id;
-    }
-  });
-  document.querySelectorAll('header nav ul li a').forEach(link => {
-    if (link.getAttribute('href').replace('#', '') === currentId) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
+// Smooth scrolling for nav links
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Fade-in effect on scroll
+const sections = document.querySelectorAll('section');
+const options = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+        }
+    });
+}, options);
+
+sections.forEach(section => {
+    section.style.opacity = 0;
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(section);
+});
+
+// Hamburger menu functionality
+const hamburger = document.querySelector('.hamburger-menu');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Experience dropdown functionality
+document.querySelectorAll('.timeline-item .content').forEach(item => {
+    item.addEventListener('click', () => {
+        const dropdown = item.querySelector('.dropdown-content');
+        if (dropdown) {
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    });
 });
