@@ -333,7 +333,7 @@ h2 {
 }
 
 .dropdown-content ul {
-    list-style: none;
+    list-style: disc;
     padding-left: 20px;
 }
 
