@@ -1,3 +1,6 @@
+// script.js
+// This file handles interactive functionalities for the portfolio website.
+
 // Navbar scroll effect
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {

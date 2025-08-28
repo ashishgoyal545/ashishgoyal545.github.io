@@ -14,7 +14,7 @@ Technical Product Manager with 7+ years of experience leading Agile teams in AI,
 
 ## 🏆 Experience
 
-### Access Services Specialist  
+### System Operations and Data Analyst
 **Case Western Reserve University, Cleveland, OH**  
 *Oct’2024 – Present*  
 - Resolved 200+ issues with Lenel, HARLD, and T2, boosting uptime and satisfaction.
