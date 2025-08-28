@@ -22,19 +22,18 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1200px; /* Restore max-width for content inside the container */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px; /* Add horizontal padding to the container */
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px; /* Add padding to the navbar itself */
     position: fixed;
     width: 100%;
-    max-width: 1200px;
     top: 0;
     z-index: 1000;
     background-color: var(--navbar-bg-color, rgba(26, 26, 26, 0.8)); /* Use a variable for background */
