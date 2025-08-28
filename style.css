@@ -29,9 +29,9 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center the container */
     align-items: center;
-    padding: 20px; /* Add padding to the navbar itself */
+    padding: 0; /* Remove padding from navbar itself */
     position: fixed;
     width: 100%;
     top: 0;
@@ -39,6 +39,15 @@ body {
     background-color: var(--navbar-bg-color, rgba(26, 26, 26, 0.8)); /* Use a variable for background */
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure container takes full width of navbar */
+    max-width: 1200px; /* Keep content constrained */
+    padding: 20px; /* Apply padding here for content */
 }
 
 .hamburger-menu {
@@ -60,7 +69,7 @@ body {
     display: flex;
     align-items: center;
     margin-left: auto; /* Pushes the switch to the right */
-    margin-right: 20px; /* Space from hamburger menu */
+    margin-right: 20px; /* Restore space from hamburger menu */
 }
 
 .theme-switch {
